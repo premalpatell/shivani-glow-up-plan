@@ -7,6 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Shivani S&amp;G">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌸%3C/text%3E%3C/svg%3E">
 <title>SHIVANI · Strength &amp; Grace — 6-Day Training Journal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -144,8 +146,8 @@ button{font-family:var(--sans)}
 .s-tip{border-left:2px solid var(--gold);padding-left:10px;font-style:italic;font-size:.74rem;color:var(--txt-dim);font-family:var(--serif)}
 .s-btn{font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;border:1.5px solid var(--rose-deep);color:var(--rose);padding:9px 16px;border-radius:99px;white-space:nowrap}
 .s-btn.g{background:linear-gradient(115deg,#8fd6a8,#5cae7d);border-color:transparent;color:#0d1f14}
-.s-kg{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;font-weight:700;font-size:.8rem}
-.s-kg span{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim)}
+.s-lb{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;font-weight:700;font-size:.8rem}
+.s-lb span{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim)}
 .s-play{width:44px;height:44px;border-radius:50%;background:var(--rose-deep);display:flex;align-items:center;justify-content:center}
 .s-yt{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.08);padding:7px 12px;border-radius:99px;border:1px solid rgba(255,255,255,.15);white-space:nowrap}
 .s-ring{width:44px;height:44px;border-radius:50%;background:conic-gradient(#e2799f 65%,rgba(255,255,255,.07) 65%);display:flex;align-items:center;justify-content:center}
@@ -206,9 +208,9 @@ button{font-family:var(--sans)}
 .done-btn{display:inline-flex;align-items:center;gap:9px;background:transparent;border:1.5px solid var(--rose-deep);color:var(--rose);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;border-radius:99px;cursor:pointer;transition:.25s}
 .done-btn:hover{background:rgba(226,121,159,.12);transform:translateY(-1px)}
 .done-btn.on{background:linear-gradient(115deg,#8fd6a8,#5cae7d);border-color:transparent;color:#0d1f14}
-.kgbox{display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:99px;padding:8px 16px}
-.kgbox input{width:58px;background:transparent;border:none;outline:none;color:var(--txt);font-family:var(--sans);font-weight:700;font-size:.9rem}
-.kgbox span{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim)}
+.lbbox{display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:99px;padding:8px 16px}
+.lbbox input{width:58px;background:transparent;border:none;outline:none;color:var(--txt);font-family:var(--sans);font-weight:700;font-size:.9rem}
+.lbbox span{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim)}
 /* video side */
 .ex-media{position:relative;min-height:280px;background:#0b0710}
 .facade{position:absolute;inset:0;border:none;padding:0;cursor:pointer;background:#0b0710;overflow:hidden}
@@ -303,7 +305,7 @@ html,body{overflow-x:clip;max-width:100%;overscroll-behavior-x:none}
 *{-webkit-tap-highlight-color:transparent}
 button,a,.tab,.dn-link{touch-action:manipulation}
 /* prevent iOS zoom-on-focus: inputs must be ≥16px */
-.kgbox input,.mf input,textarea.notes{font-size:16px}
+.lbbox input,.mf input,textarea.notes{font-size:16px}
 /* Safari needs the -webkit- prefix for glass blur */
 .daynav{-webkit-backdrop-filter:blur(18px)}
 .hero-stats{-webkit-backdrop-filter:blur(12px)}
@@ -320,6 +322,7 @@ button,a,.tab,.dn-link{touch-action:manipulation}
 .dn-link{scroll-snap-align:center}
 
 @media(max-width:640px){
+  .dn-link{padding:12px 16px}
   .hero{min-height:100svh;padding:70px 18px 90px}
   .hero h1{font-size:clamp(3.2rem,17vw,5rem)}
   .hero-stats{width:100%;display:grid;grid-template-columns:repeat(3,1fr)}
@@ -433,7 +436,7 @@ button,a,.tab,.dn-link{touch-action:manipulation}
         <div><h5>Backup link</h5><p>If a video won't play inside the page (rare), this opens the same video in the YouTube app or a new tab.</p></div></div>
       <div class="lg-item"><div class="lg-sample"><span class="s-btn">Complete</span> </div>
         <div><h5>Mark it done</h5><p>Tap after your last set — it turns green <span class="s-btn g" style="margin:0 4px">✓ Completed</span> and your day's progress bar fills. Finish a whole day and you get confetti.</p></div></div>
-      <div class="lg-item"><div class="lg-sample"><span class="s-kg">25 <span>lbs</span></span></div>
+      <div class="lg-item"><div class="lg-sample"><span class="s-lb">25 <span>lbs</span></span></div>
         <div><h5>Weight journal</h5><p>Type the weight you used in lbs. It's saved on this device, so next session you know exactly what to beat.</p></div></div>
       <div class="lg-item"><div class="lg-sample"><span class="s-ring"><i>65%</i></span></div>
         <div><h5>Weekly rings</h5><p>In "Your week at a glance", each day has a ring that fills as you complete its exercises. A ♥ means the day is fully done.</p></div></div>
@@ -458,11 +461,11 @@ button,a,.tab,.dn-link{touch-action:manipulation}
   <h2 class="h2" style="font-size:clamp(1.6rem,4vw,2.2rem)">Measure <em>once a month</em></h2>
   <p class="sub">Photos and how clothes fit tell the truth better than any scale.</p>
   <div class="mgrid">
-    <div class="mf"><label>Weight · lbs</label><input data-m="weight" placeholder="—"></div>
-    <div class="mf"><label>Waist · in</label><input data-m="waist" placeholder="—"></div>
-    <div class="mf"><label>Hips · in</label><input data-m="hips" placeholder="—"></div>
-    <div class="mf"><label>Arms · in</label><input data-m="arms" placeholder="—"></div>
-    <div class="mf"><label>Thighs · in</label><input data-m="thighs" placeholder="—"></div>
+    <div class="mf"><label>Weight · lbs</label><input data-m="weight" inputmode="decimal" placeholder="—"></div>
+    <div class="mf"><label>Waist · in</label><input data-m="waist" inputmode="decimal" placeholder="—"></div>
+    <div class="mf"><label>Hips · in</label><input data-m="hips" inputmode="decimal" placeholder="—"></div>
+    <div class="mf"><label>Arms · in</label><input data-m="arms" inputmode="decimal" placeholder="—"></div>
+    <div class="mf"><label>Thighs · in</label><input data-m="thighs" inputmode="decimal" placeholder="—"></div>
   </div>
   <textarea class="notes" id="notesBox" placeholder="Journal — energy, small wins, PRs, how you felt…"></textarea>
 </section>
@@ -627,7 +630,7 @@ function exCard(ex,d,b,i,globalIdx){
       <div class="coach">${ex.tip}</div>
       <div class="ex-foot">
         <button class="done-btn ${done?'on':''}" onclick="toggleCheck('${id}',${d})">${done?'✓ Completed':'Complete'}</button>
-        <div class="kgbox"><input type="number" min="0" step="0.5" placeholder="0" value="${wt}" onchange="saveWeight('${id}',this.value)"><span>lbs</span></div>
+        <div class="lbbox"><input type="number" min="0" step="0.5" inputmode="decimal" placeholder="0" value="${wt}" onchange="saveWeight('${id}',this.value)"><span>lbs</span></div>
       </div>
     </div>
     <div class="ex-media">
