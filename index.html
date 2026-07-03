@@ -295,6 +295,11 @@ footer .disc{max-width:620px;margin:22px auto 0;font-size:.68rem;color:rgba(183,
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:300}
 
 /* ============ iOS / MOBILE OPTIMIZATION ============ */
+/* no sideways scrolling — clip anything that pokes past the viewport */
+html,body{overflow-x:clip;max-width:100%;overscroll-behavior-x:none}
+@supports not (overflow:clip){html,body{overflow-x:hidden}}
+/* day links land exactly below the sticky nav, on the day's banner */
+.day,.dash,.legend{scroll-margin-top:72px}
 *{-webkit-tap-highlight-color:transparent}
 button,a,.tab,.dn-link{touch-action:manipulation}
 /* prevent iOS zoom-on-focus: inputs must be ≥16px */
@@ -428,8 +433,8 @@ button,a,.tab,.dn-link{touch-action:manipulation}
         <div><h5>Backup link</h5><p>If a video won't play inside the page (rare), this opens the same video in the YouTube app or a new tab.</p></div></div>
       <div class="lg-item"><div class="lg-sample"><span class="s-btn">Complete</span> </div>
         <div><h5>Mark it done</h5><p>Tap after your last set — it turns green <span class="s-btn g" style="margin:0 4px">✓ Completed</span> and your day's progress bar fills. Finish a whole day and you get confetti.</p></div></div>
-      <div class="lg-item"><div class="lg-sample"><span class="s-kg">12 <span>kg</span></span></div>
-        <div><h5>Weight journal</h5><p>Type the weight you used. It's saved on this device, so next session you know exactly what to beat.</p></div></div>
+      <div class="lg-item"><div class="lg-sample"><span class="s-kg">25 <span>lbs</span></span></div>
+        <div><h5>Weight journal</h5><p>Type the weight you used in lbs. It's saved on this device, so next session you know exactly what to beat.</p></div></div>
       <div class="lg-item"><div class="lg-sample"><span class="s-ring"><i>65%</i></span></div>
         <div><h5>Weekly rings</h5><p>In "Your week at a glance", each day has a ring that fills as you complete its exercises. A ♥ means the day is fully done.</p></div></div>
       <div class="lg-item"><div class="lg-sample"><span class="s-chip grey" style="border-color:rgba(232,201,160,.4);color:var(--gold)">02 · Core Finisher</span></div>
@@ -453,7 +458,7 @@ button,a,.tab,.dn-link{touch-action:manipulation}
   <h2 class="h2" style="font-size:clamp(1.6rem,4vw,2.2rem)">Measure <em>once a month</em></h2>
   <p class="sub">Photos and how clothes fit tell the truth better than any scale.</p>
   <div class="mgrid">
-    <div class="mf"><label>Weight · kg</label><input data-m="weight" placeholder="—"></div>
+    <div class="mf"><label>Weight · lbs</label><input data-m="weight" placeholder="—"></div>
     <div class="mf"><label>Waist · in</label><input data-m="waist" placeholder="—"></div>
     <div class="mf"><label>Hips · in</label><input data-m="hips" placeholder="—"></div>
     <div class="mf"><label>Arms · in</label><input data-m="arms" placeholder="—"></div>
@@ -468,7 +473,7 @@ button,a,.tab,.dn-link{touch-action:manipulation}
   <h2 class="h2">The golden <em>rules</em></h2>
   <div class="rules-grid">
     <div class="rule-card"><div class="ic">📈</div><h4>Progressive Overload</h4><p>Finish every set at the top of the rep range with clean form? Add a little weight next time. That is how a body changes.</p></div>
-    <div class="rule-card"><div class="ic">🍳</div><h4>Protein Daily</h4><p>Roughly 1.6–2 g per kg of bodyweight, spread across the day, keeps muscle toning and recovery on track.</p></div>
+    <div class="rule-card"><div class="ic">🍳</div><h4>Protein Daily</h4><p>Roughly 0.7–1 g per lb of bodyweight, spread across the day, keeps muscle toning and recovery on track.</p></div>
     <div class="rule-card"><div class="ic">🌙</div><h4>Sleep 7–9 Hours</h4><p>The sculpting happens at night. Guard your sleep like a training session.</p></div>
     <div class="rule-card"><div class="ic">💧</div><h4>Hydrate</h4><p>2.5–3 litres a day. Bring a bottle, sip between sets.</p></div>
     <div class="rule-card"><div class="ic">🐢</div><h4>Form Before Weight</h4><p>Slow, controlled reps beat heavy sloppy ones — every single time.</p></div>
@@ -622,7 +627,7 @@ function exCard(ex,d,b,i,globalIdx){
       <div class="coach">${ex.tip}</div>
       <div class="ex-foot">
         <button class="done-btn ${done?'on':''}" onclick="toggleCheck('${id}',${d})">${done?'✓ Completed':'Complete'}</button>
-        <div class="kgbox"><input type="number" min="0" step="0.5" placeholder="0" value="${wt}" onchange="saveWeight('${id}',this.value)"><span>kg</span></div>
+        <div class="kgbox"><input type="number" min="0" step="0.5" placeholder="0" value="${wt}" onchange="saveWeight('${id}',this.value)"><span>lbs</span></div>
       </div>
     </div>
     <div class="ex-media">
