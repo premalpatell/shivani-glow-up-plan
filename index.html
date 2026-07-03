@@ -61,7 +61,7 @@ button{font-family:var(--sans)}
 @keyframes aur3{to{transform:translate(-10vmax,-12vmax) scale(1.22)}}
 .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,11,24,.55) 0%,rgba(18,11,24,.35) 45%,var(--bg) 96%)}
 #sparkles{position:absolute;inset:0;z-index:0;pointer-events:none}
-.hero>*:not(.hero-bg):not(.hero-glow):not(.aurora):not(.hero-shade):not(#sparkles){position:relative;z-index:2}
+.hero>*:not(.hero-bg):not(.hero-glow):not(.aurora):not(.hero-shade):not(#sparkles):not(.halo){position:relative;z-index:2}
 /* halo ring ornament behind the name */
 .halo{position:absolute;z-index:1;top:50%;left:50%;width:min(78vw,620px);aspect-ratio:1;transform:translate(-50%,-58%);border-radius:50%;border:1px solid rgba(244,183,205,.18);pointer-events:none;animation:halospin 40s linear infinite}
 .halo::before{content:'';position:absolute;inset:-1px;border-radius:50%;border:1px solid transparent;border-top-color:rgba(232,201,160,.55);border-right-color:rgba(226,121,159,.25);filter:drop-shadow(0 0 8px rgba(232,201,160,.35))}
